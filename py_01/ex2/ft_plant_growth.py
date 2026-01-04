@@ -6,7 +6,7 @@
 #    By: santoos <santoos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/30 20:18:22 by moerrais          #+#    #+#              #
-#    Updated: 2026/01/04 06:16:39 by santoos          ###   ########.fr        #
+#    Updated: 2026/01/04 07:57:00 by santoos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,16 +28,17 @@ class Plant():
     def get_info(self):
         return f"{self.name}: {self.height}cm, {self.age} days old"
     
-    def simulate_week(plant):
-        tmp = plant.height
+    def simulate_week(self):
+        tmp = self.height
         print ("== Day 1 ==")
-        print (plant.get_info())
+        print (self.get_info())
         for _ in range(6):
-            plant.age_hani()
-            plant.grow()
+            self.age_hani()
+            self.grow()
         print ("== Day 7 ==")
-        print (plant.get_info())
-        print (f"Growth this week: +{plant.height - tmp}cm")
+        print (self.get_info())
+        print (f"Growth this week: +{self.height - tmp}cm")
 
-data1 = Plant("Rose", 25, 30)
-data1.simulate_week()
+if __name__ == "__main__":
+    data1 = Plant("Rose", 25, 30)
+    data1.simulate_week()
