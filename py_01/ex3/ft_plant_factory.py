@@ -6,7 +6,7 @@
 #    By: santoos <santoos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/30 20:18:19 by moerrais          #+#    #+#              #
-#    Updated: 2026/01/04 09:18:32 by santoos          ###   ########.fr        #
+#    Updated: 2026/01/04 11:32:33 by santoos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,18 +16,22 @@ class Plant():
         self.height = height
         self.age = age
     def print_data(self):
-        return f"{self.name} ({self.height})cm, {self.age} days"
+        return f"{self.name} ({self.height}cm, {self.age} days)"
 
-plant_data = [
-    ["Rose", 25, 30],
-    ["Oak", 200, 365],
-    ["Cactus", 5, 90],
-    ["Sunflower", 80, 45],
-    ["Fern", 15, 120]
-]
-plants = []
-for name, h, a in plant_data:
-    plant = Plant(name,h ,a)
-    plants.append(plant)
-for plant in plants:
-    print(f"Created: {plant.print_data()}")
+if __name__  == "__main__":
+    print ("=== Plant Factory Output ===")
+    plants = [
+        ["Rose", 25, 30],
+        ["Oak", 200, 365],
+        ["Cactus", 5, 90],
+        ["Sunflower", 80, 45],
+        ["Fren", 15, 120]
+    ]
+    plants_data = []
+    for name, h, a in plants:
+        plants_data.append(Plant(name, h, a))
+    i = 0
+    for _ in plants_data:
+        print (f"Created: {plants_data[i].print_data()}")
+        i +=1
+    print(f"\nTotal plants created: {len(plants_data)}")
