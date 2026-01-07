@@ -40,7 +40,7 @@ class Tree(Plant):
         print (f"{self._name} provides {res} square meters of shade")
 
         
-class Vagetable(Plant):
+class Vegetable(Plant):
     def __init__(self,name ,height, age):
         super().__init__(name, height , age)
         if (self._age == -1):
@@ -48,16 +48,16 @@ class Vagetable(Plant):
         if (self._height == -1):
             return
         if (age >= 60 and age <= 120):
-            self._harvest = "summer harvset"
+            self._harvest = "summer harvest"
         else:
-            self._harvest = ""
+            self._harvest = "not ready"
         print (f"{self._name} (Vagetable): {self._height}cm, {self._age} dyas, {self._harvest}")
         if (self._age >= 60 and self._age <= 120 and self._height >= 50):
-            print ("Tomato is rich in vitamin C")
+            print (f"{name} is rich in vitamin C")
         elif (self._age > 120):
-            print("Tomato harvest season has passed")
+            print(f"{name} harvest season has passed")
         elif (self._age < 60):
-            print ("Tomato is too young to harvest")
+            print (f"{name} is too young to harvest")
 if __name__ == "__main__":
     print ("=== Garden Plant Types ===")
     print()
@@ -65,4 +65,4 @@ if __name__ == "__main__":
     print ()
     Tree("Oak", 500, 1825)
     print ()
-    Vagetable("Tomato", 80, 130)
+    Vegetable("Tomato", 80, 130)

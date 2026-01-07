@@ -1,12 +1,14 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    ft_garden_analytics.py                             :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: moerrais <moerrais@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/12/30 20:18:11 by moerrais          #+#    #+#              #
-#    Updated: 2025/12/30 20:18:13 by moerrais         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+
+
+class Plant():
+    def __init__(self, name, height, age):
+        self._name = name
+        self._height = height
+        self.age = age
+
+class 
+
+
+
+print("=== Garden Management System Demo ===")
 
