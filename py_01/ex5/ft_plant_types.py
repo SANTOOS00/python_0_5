@@ -1,68 +1,86 @@
 
 class Plant():
     def __init__(self, name, height, age):
-        self._name = name
+        self.__name = name
         if 0 <= height:
-            self._height = height
+            self.__height = height
         else:
             print(f"Invalid operation attempted: height {height}cm [REJECTED]")
             print("Security: Negative height rejected")
-            self._height = -1
+            self.__height = -1
         if 0 <= age:
-            self._age = age
+            self.__age = age
         else:
             print(f"Invalid operation attempted: height {age}cm [REJECTED]")
             print("Security: Negative age rejected")
-            self._age = -1
+            self.__age = -1
+
+    def get_m(self):
+        return self.__name
+
+    def get_g(self):
+        return self.__age
+    
+    def get_h(self):
+        return self.__height
+
+
 class Flower(Plant):
-    def __init__(self, name, height, age , color):
+    def __init__(self, name, height, age, color):
         super().__init__(name, height, age)
-        self._color = color
-        if (self._height == -1):
+        self.__color = color
+        if self.get_h() == -1 or self.get_g() == -1:
             return
-        if (self._age == -1):
-            return
-        print (f"{self._name} (Flower): {self._height}cm, {self._age} dyas, {self._color} color")
-        if self._age >= 20 and self._height >= 20:
-            print ("Rose is blooming beautifully!")
+        print(
+            f"{self.get_m()} (Flower): {self.get_h()}cm," 
+            f"{self.get_g()} dyas, {self.__color} color"
+        )
+        if self.get_g() >= 20 and self.get_h() >= 20:
+            print("Rose is blooming beautifully!")
         else:
             print("Rose is too young to bloom.")
+
+
 class Tree(Plant):
     def __init__(self, name, height, age):
         super().__init__(name, height, age)
-        if (self._height == -1):
+        if self.get_h() == -1 or self.get_g() == -1:
             return
-        if (self._age == -1):
-            return
-        self._trunk_diameter = (self._age // 365) * 10
-        res = (self._height * self._trunk_diameter) // 320
-        print (f"{self._name} (Tree): {self._height}cm, {self._age} dyas, {self._trunk_diameter} diameter")
-        print (f"{self._name} provides {res} square meters of shade")
+        self.__trunk = (self.get_g() // 365) * 10
+        res = (self.get_h() * self.__trunk) // 320
+        print(
+            f"{self.get_m()} (Tree): {self.get_h()}cm," 
+            f"{self.get_g()} dyas, {self.__trunk} diameter"
+        )
+        print(f"{self.get_m()} provides {res} square meters of shade")
 
         
 class Vegetable(Plant):
-    def __init__(self,name ,height, age):
-        super().__init__(name, height , age)
-        if (self._age == -1):
-            return
-        if (self._height == -1):
+    def __init__(self, name, height, age):
+        super().__init__(name, height, age)
+        if self.get_h() == -1 or self.get_g() == -1:
             return
         if (age >= 60 and age <= 120):
-            self._harvest = "summer harvest"
+            self.__harvest = "summer harvest"
         else:
-            self._harvest = "not ready"
-        print (f"{self._name} (Vagetable): {self._height}cm, {self._age} dyas, {self._harvest}")
-        if (self._age >= 60 and self._age <= 120 and self._height >= 50):
-            print (f"{name} is rich in vitamin C")
-        elif (self._age > 120):
+            self.__harvest = "not ready"
+        print(
+            f"{self.get_m()} (Vagetable): {self.get_h()}cm, "
+            f"{self.get_g()} dyas, {self.__harvest}"
+        )
+        if self.get_g() >= 60 and self.get_g() <= 120 and self.get_h() >= 50:
+            print(f"{name} is rich in vitamin C")
+        elif (self.get_g() > 120):
             print(f"{name} harvest season has passed")
-        elif (self._age < 60):
-            print (f"{name} is too young to harvest")
+        elif (self.get_g() < 60):
+            print(f"{name} is too young to harvest")
+
+
 if __name__ == "__main__":
-    print ("=== Garden Plant Types ===")
+    print("=== Garden Plant Types ===")
     print()
     Flower("Rose", 25, 30, "red")
-    print ()
+    print()
     Tree("Oak", 500, 1825)
-    print ()
-    Vegetable("Tomato", 80, 130)
+    print()
+    Vegetable("Tomato", 80, 90)
