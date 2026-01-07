@@ -20,7 +20,7 @@ class Plant():
 
     def get_g(self):
         return self.__age
-    
+
     def get_h(self):
         return self.__height
 
@@ -32,7 +32,7 @@ class Flower(Plant):
         if self.get_h() == -1 or self.get_g() == -1:
             return
         print(
-            f"{self.get_m()} (Flower): {self.get_h()}cm," 
+            f"{self.get_m()} (Flower): {self.get_h()}cm,"
             f"{self.get_g()} dyas, {self.__color} color"
         )
         if self.get_g() >= 20 and self.get_h() >= 20:
@@ -49,12 +49,12 @@ class Tree(Plant):
         self.__trunk = (self.get_g() // 365) * 10
         res = (self.get_h() * self.__trunk) // 320
         print(
-            f"{self.get_m()} (Tree): {self.get_h()}cm," 
+            f"{self.get_m()} (Tree): {self.get_h()}cm,"
             f"{self.get_g()} dyas, {self.__trunk} diameter"
         )
         print(f"{self.get_m()} provides {res} square meters of shade")
 
-        
+
 class Vegetable(Plant):
     def __init__(self, name, height, age):
         super().__init__(name, height, age)
