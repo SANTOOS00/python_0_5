@@ -7,7 +7,7 @@ class Plant():
         self.__height = 0
         print(f"Plant created: {self.__name}")
 
-    def set_age(self, age): 
+    def set_age(self, age):
         if (0 <= age):
             if (self.__age < age):
                 self.__age = age
