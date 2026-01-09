@@ -1,5 +1,3 @@
-
-
 Plant = "Rose"
 Height = 25
 Age = 30
