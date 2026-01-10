@@ -10,20 +10,19 @@ class Plant():
         return f"{self.name} ({self.height}cm, {self.age} days)"
 
 
-if __name__ == "__main__":
+def main():
     print("=== Plant Factory Output ===")
     plants = [
-        ["Rose", 25, 30],
-        ["Oak", 200, 365],
-        ["Cactus", 5, 90],
-        ["Sunflower", 80, 45],
-        ["Fren", 15, 120]
+        Plant("Rose", 25, 30),
+        Plant("Oak", 200, 365),
+        Plant("Cactus", 5, 90),
+        Plant("Sunflower", 80, 45),
+        Plant("Fren", 15, 120)
     ]
-    plants_data = []
-    for name, h, a in plants:
-        plants_data.append(Plant(name, h, a))
-    i = 0
-    for _ in plants_data:
-        print(f"Created: {plants_data[i].print_data()}")
-        i += 1
-    print(f"\nTotal plants created: {len(plants_data)}")
+    for data in plants:
+        print(f"Created: {data.print_data()}")
+    print(f"\nTotal plants created: {len(plants)}")
+
+
+if __name__ == "__main__":
+    main()

@@ -2,22 +2,15 @@
 
 class Plant():
     def __init__(self, name):
-        self.__name = name
+        self.name = name
         self.__age = 0
         self.__height = 0
         print(f"Plant created: {self.__name}")
 
     def set_age(self, age):
         if (0 <= age):
-            if (self.__age < age):
-                self.__age = age
-                print(f"Age updated: {age} days [OK]")
-            else:
-                print(f"The plant’s age is {self.__age} days")
-                print(
-                    "Security: The plant is older than, or the same age as, "
-                    "the age I entered"
-                )
+            self.__age = age
+            print(f"Age updated: {age} days [OK]")
         else:
             print(f"Invalid operation attempted: age {age} [REJECTED]")
             print("Security: Negative age rejected")
@@ -31,17 +24,17 @@ class Plant():
             print("Security: Negative height rejected")
 
     def get_height(self):
-        return f"Plant: {self.__name} ==> height {self.__height}cm"
+        return f"Plant: {self.name} ==> height {self.__height}cm"
 
     def get_age(self):
-        return f"Plant: {self.__name} ==> age {self.__age}"
+        return f"Plant: {self.name} ==> age {self.__age}"
 
     def statu(self):
-        print(f"Current plant: {self.__name} ({self.__height}cm, "
+        print(f"Current plant: {self.name} ({self.__height}cm, "
               f"{self.__age})")
 
 
-if __name__ == "__main__":
+def main():
     print("=== Garden Security System ===")
     data1 = Plant("Rose")
     data1.set_height(25)
@@ -50,3 +43,7 @@ if __name__ == "__main__":
     data1.set_height(-5)
     print()
     data1.statu()
+
+
+if __name__ == "__main__":
+    main()

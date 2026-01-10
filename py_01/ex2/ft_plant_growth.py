@@ -12,7 +12,7 @@ class Plant():
         else:
             self.height += 0.5
 
-    def age_hani(self):
+    def age_(self):
         self.age += 1
 
     def get_info(self):
@@ -24,7 +24,7 @@ class Plant():
         print(self.get_info())
         i = 6
         while i:
-            self.age_hani()
+            self.age_()
             self.grow()
             i -= 1
         print("== Day 7 ==")
@@ -32,6 +32,10 @@ class Plant():
         print(f"Growth this week: +{self.height - tmp}cm")
 
 
-if __name__ == "__main__":
+def main():
     data1 = Plant("Rose", 25, 30)
     data1.simulate_week()
+
+
+if __name__ == "__main__":
+    main()

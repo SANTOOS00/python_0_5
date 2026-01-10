@@ -1,24 +1,76 @@
 
 
-class Plant():
-    def __init__(self, name, height, age):
-        self.__name = name
-        self.__height = height
-        self.__age = age
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class GardenManager:
+    def 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ft_garden_analytics.py
+
+if __name__ == "__main__":
+    print("=== Garden Management System Demo ===")
+
+    # 1️⃣ إنشاء مدير الحدائق
+    manager = GardenManager()
+
+    # 2️⃣ إضافة حدائق
+    manager.add_garden("Alice")
+    manager.add_garden("Bob")
+
+    # 3️⃣ إضافة نباتات لكل حديقة
+    manager.add_plant_to_garden("Alice", OakTree())
+    manager.add_plant_to_garden("Alice", Rose())
+    manager.add_plant_to_garden("Alice", Sunflower())
     
-    def get__name():
-        return self.__name
-    
-    def get__height():
-        return self.__height
-    
-    def get__age():
-        return self.__age
+    manager.add_plant_to_garden("Bob", Tulip())
+    manager.add_plant_to_garden("Bob", Daisy())
 
+    # 4️⃣ تنمية النباتات
+    print("All gardens are helping their plants grow...")
+    manager.grow_all_gardens()
 
+    # 5️⃣ عرض التقارير النهائية
+    print("=== Garden Reports ===")
+    manager.show_reports()
 
-
-class Plants(Plant):
-    def __init__ 
-print("=== Garden Management System Demo ===")
-
+    # 6️⃣ مثال على استخدام دوال الكلاس أو الثابتة
+    print(f"Total gardens managed: {GardenManager.total_gardens()}")
