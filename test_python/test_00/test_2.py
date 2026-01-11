@@ -25,15 +25,13 @@ class test1:
 
 
 
-owner = test1("owner1")
-owne1 = test1("owner2")
-owner.add(test2("hamid", 23))
-owner.add(test2("hamid", 23))
-owne1.add(test2("hamid", 23))
-owne1.add(test2("hamid", 23))
-owne1.add(test2("hamid", 23))
 
+owner1 = test1("owner1")
+owner1.add(test2("hamid", 23))
+owner1.add(test2("hamid", 23))
+owner1.add(test2("hamid", 23))
 
+owner2 = test1("owner2")
+owner2.add(test2("hamid", 23))
 
-
-print(f"total mazot ==> {test1.static.report(owner)}")
+print(f"total mazot ==> {test1.static.report()}")
