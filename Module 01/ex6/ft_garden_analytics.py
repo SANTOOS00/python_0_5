@@ -20,10 +20,7 @@ class FloweringPlant(Plant):
         self.bloom = bloom
 
     def info_flower(self):
-        if self.bloom:
-            return f"- {self.name}: {self.height}cm, {self.color} flowers (blooming)"
-        else:
-            return f"- {self.name}: {self.height}cm, {self.color} flowers (not blooming)"
+        return f"- {self.name}: {self.height}cm, {self.color} flowers ({self.bloom})"
 
 
 class PrizeFlower(FloweringPlant):
@@ -33,13 +30,12 @@ class PrizeFlower(FloweringPlant):
         self.type = 3
     
     def info_prize(self):
-        if self.bloom:
-            return f"- {self.name}: {self.height}cm, {self.color} flowers (blooming), Prize points: {self.points}"
-        else:
-            return f"- {self.name}: {self.height}cm, {self.color} flowers (not blooming), Prize points: {self.points}"
+        return f"- {self.name}: {self.height}cm, {self.color} flowers ({self.bloom}), Prize points: {self.points}"
 
 
 class GardenManager:
+    class GardenStats:
+        
     def __init__(self, owner):
         self.owner = owner
         self.Plants = []
@@ -68,8 +64,8 @@ def main():
     print()
     my_garden1 = GardenManager("Alice")
     my_garden1.add_Plant(Plant("Oak Tree", 100))
-    my_garden1.add_Plant(FloweringPlant("Rose", 25, "red", True))
-    my_garden1.add_Plant(PrizeFlower("Sunflower", 50, "Yellow", True, 10))
+    my_garden1.add_Plant(FloweringPlant("Rose", 25, "red", "blooming"))
+    my_garden1.add_Plant(PrizeFlower("Sunflower", 50, "Yellow", "blooming", 10))
     print()
     my_garden1.All_Plants_Grow()
     # my_garden1.All_Plants_Grow1()
