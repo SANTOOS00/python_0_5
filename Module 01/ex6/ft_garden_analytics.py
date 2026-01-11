@@ -35,7 +35,7 @@ class PrizeFlower(FloweringPlant):
 
 class GardenManager:
     class GardenStats:
-        
+    
     def __init__(self, owner):
         self.owner = owner
         self.Plants = []
@@ -49,15 +49,8 @@ class GardenManager:
         for Plant in self.Plants:
             Plant.add_height()
 
-    def Report_garden(self):
-        for plant in self.Plants:
-            if plant.type == 1:
-                print(plant.info_plant())
-            elif plant.type == 2:
-                print(plant.info_flower())
-            else:
-                print(plant.info_prize())
-
+    def Report(self):
+        print(f"=== {self.owner}'s Garden Report ===")
 
 def main():
     print("=== Garden Management System Demo ===")
@@ -69,7 +62,7 @@ def main():
     print()
     my_garden1.All_Plants_Grow()
     # my_garden1.All_Plants_Grow1()
-    my_garden1.Report_garden()
+    my_garden1.Report()
 
 
 if __name__ == "__main__":
