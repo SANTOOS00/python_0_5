@@ -1,38 +1,39 @@
-class tonobil:
-	def __init__(self, 	name, mazot):
+class test2:
+	def __init__(self, name, mazot):
 		self.name = name
 		self.mazot = mazot
 
-
-class company:
-	def __init__(self, name):
+class test1:
+	test3 = []
+	def __init__ (self, name):
 		self.name = name
-		self.tonoblat = []
-	def add_tonobl(self, tonoble):
-		self.tonoblat.append(tonoble)
+		self.tonbelat = []
+		test1.test3.append(self)
 	
-	def report(self):
-			# total = sum(self.tonoblat)
-			count = len(self.tonoblat)
-			return f"Company {self.name}: , count={count}"
+
+	def add(self, add):
+		self.tonbelat.append(add)
+
 	class static:
-
-		@staticmethod
-		def report(company):
-			# total = sum(self.tonoblat)
-			count = len(self.tonoblat)
-			return f"Company {self.name}: , count={count}"
-
-def main():
-	owner = company("owner1")
-	test = static()
-	tn1  = tonobil("sanr", 23)
-	tn2  = tonobil("sanr", 23)
-	owner.add_tonobl(tn1)
-	owner.add_tonobl(tn2)
-	print(owner.report())
-
-if __name__ == "__main__":
-	main()
+		@classmethod
+		def report(cls):
+			res = 0
+			for owner in test1.test3:
+				for t in owner.tonbelat:
+				    res += t.mazot
+			return res
 
 
+
+owner = test1("owner1")
+owne1 = test1("owner2")
+owner.add(test2("hamid", 23))
+owner.add(test2("hamid", 23))
+owne1.add(test2("hamid", 23))
+owne1.add(test2("hamid", 23))
+owne1.add(test2("hamid", 23))
+
+
+
+
+print(f"total mazot ==> {test1.static.report(owner)}")
