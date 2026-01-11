@@ -34,4 +34,8 @@ owner1.add(test2("hamid", 23))
 owner2 = test1("owner2")
 owner2.add(test2("hamid", 23))
 
+
+owner3 = test1("owner2")
+owner3.add(test2("hamid", 23))
+
 print(f"total mazot ==> {test1.static.report()}")

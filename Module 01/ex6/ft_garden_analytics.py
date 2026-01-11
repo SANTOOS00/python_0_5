@@ -3,7 +3,7 @@ class Plant:
     def __init__(self, name, height):
         self.name = name
         self.height = height
-        self.type = 1
+        self.type = "Plant"
 
     def add_height(self):
         self.height += 1
@@ -16,29 +16,32 @@ class FloweringPlant(Plant):
     def __init__(self, name, height, color, bloom):
         super().__init__(name, height)
         self.color = color
-        self.type = 2
+        self.type = "FloweringPlant"
         self.bloom = bloom
 
     def info_flower(self):
         return f"- {self.name}: {self.height}cm, {self.color} flowers ({self.bloom})"
 
-
 class PrizeFlower(FloweringPlant):
     def __init__(self, name, height, color, bloom, points):
         super().__init__(name, height, color, bloom)
         self.points = points
-        self.type = 3
+        self.type = "PrizeFlower"
     
     def info_prize(self):
         return f"- {self.name}: {self.height}cm, {self.color} flowers ({self.bloom}), Prize points: {self.points}"
 
 
 class GardenManager:
+    test3 = []
     class GardenStats:
-    
+        @classmethod
+        def report(cls):
+            for 
     def __init__(self, owner):
         self.owner = owner
         self.Plants = []
+        GardenManager.test3.append(self)
 
     def add_Plant(self, plant):
         self.Plants.append(plant)
@@ -51,6 +54,7 @@ class GardenManager:
 
     def Report(self):
         print(f"=== {self.owner}'s Garden Report ===")
+
 
 def main():
     print("=== Garden Management System Demo ===")
